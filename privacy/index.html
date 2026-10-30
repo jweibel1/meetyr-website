@@ -29,7 +29,7 @@
 
     <main class="wrap doc">
       <h1>Privacy Policy</h1>
-      <p class="updated">Effective October 26, 2026</p>
+      <p class="updated">Effective October 30, 2026</p>
 
       <p>
         This policy explains what information Meetyr LLC ("Meetyr", "we", "us") collects when you use the Meetyr
@@ -41,7 +41,7 @@
         <p>
           <strong>The short version:</strong> we collect what's needed to run a community rating app: your account,
           your profile, your location while you use the app (and, only if you turn on visit features, the businesses you
-          visit), and the ratings you give and receive. We don't sell
+          visit), the ratings you give and receive, and what you share in parties. We don't sell
           your information, we don't show ads, and we don't track you across other apps or websites. The iPhone and
           Android apps contain no analytics or advertising tools; our website and the web version of Meetyr count visits without cookies.
         </p>
@@ -49,7 +49,20 @@
 
       <h2>Information you give us</h2>
       <ul>
-        <li><strong>Account:</strong> your email address and password. Passwords are stored only in encrypted (hashed) form.</li>
+        <li>
+          <strong>Account:</strong> your email address and password, or, if you use Sign in with Apple or Google, what
+          Apple or Google shares with us (below). Passwords are stored only in encrypted (hashed) form.
+        </li>
+        <li>
+          <strong>Sign in with Apple:</strong> Apple shares an ID for your Apple account, your email address (it can be
+          an Apple "Hide My Email" address that forwards to you) and, the first time, your name if you choose to share
+          it. We use the name to fill in your display name, which you can change. We also keep a token from Apple, used
+          only to end Meetyr's access to your Apple ID when you delete your account.
+        </li>
+        <li>
+          <strong>Sign in with Google:</strong> Google shares your name, email address and profile picture, and an ID
+          for your Google account. Meetyr gets no other access to your Google account.
+        </li>
         <li>
           <strong>Profile:</strong> your display name, @handle, profile photo, whether you're a person or a business,
           a category, and a short "About" text.
@@ -64,8 +77,30 @@
           was private when you gave it.
         </li>
         <li>
+          <strong>Parties:</strong> the parties you throw or join, the questions and answer options you write,
+          your votes, your comments, the photos, videos and voice clips you add to questions, the invitations you send,
+          get or decline, and reports about party content.
+        </li>
+        <li>
+          <strong>Party comments:</strong> in parties hosted by a person, you can comment under a question while it's open, up to
+          140 characters, with no replies, and up to 100 comments a day. Comments can't include an @handle or the full
+          name of someone in the party. The party's members see your comments with your name. You or the host can
+          remove one. When someone reports a comment, it's hidden from everyone but you until Meetyr's
+          team looks at it, unless that person has already used their 50 reports for the day.
+        </li>
+        <li>
+          <strong>Question photos, videos and voice clips:</strong> you can add one to a question you ask. Before a
+          photo or video leaves your phone, the app removes its location and other saved details: photos are saved
+          again as a smaller copy, and videos keep only their first 30 seconds, with sound. Voice clips are recorded in
+          the app, up to 30 seconds. We store them privately, and only members of that question's party, and Meetyr's
+          team, can open them. They stay with the question after it closes. A report hides one the same way as a
+          comment, and Meetyr's team looks at it.
+        </li>
+        <li>
           <strong>Safety reports:</strong> when you report a member or flag a rating you received, the reason you
-          choose and any details you write.
+          choose and any details you write. When you report something in a party (the party, an invitation, a
+          question, its photo, video or voice clip, or a comment), the reason you pick, such as "It's about a person"
+          or "It shows a person", and a copy of what you reported.
           We also keep a record of members you block.
         </li>
         <li>
@@ -98,17 +133,32 @@
           minutes the person scanning has to rate you.
         </li>
         <li>
-          <strong>Camera:</strong> used only when you take a profile photo or scan a QR code. Camera images aren't
-          stored except the profile photo you choose.
+          <strong>Camera:</strong> used only when you take a profile photo, scan a QR code, or take a photo or video for
+          a party question. We store only the profile photo you choose and the photos and videos you post to a
+          party.
+        </li>
+        <li>
+          <strong>Microphone:</strong> used only while you record a video or a voice clip for a party question. Only a
+          clip you add to a question is stored.
+        </li>
+        <li>
+          <strong>Photo library:</strong> used only when you choose a profile photo, or a photo or video for a party
+          question. Only the one you choose is uploaded.
         </li>
         <li>
           <strong>Notifications:</strong> only if you turn them on. Visit reminders, and a "Remind me tomorrow" after
-          you scan a business's code, are set up by your phone itself. Group notifications are push notifications we
-          send (iPhone only): if you turn them on in Me → Group notifications, we save your phone's push token with
-          your account. They tell you who invited you to a private group, that there's a new question in a group
-          (with the group's name), and when your question closes, never a question or an answer. A verified business
-          that turns on push also gets notices about its customer group. Turning them off, signing out or deleting
+          you scan a business's code, are set up by your phone itself. Party notifications are push notifications we
+          send (iPhone only): if you turn them on in Me → Party notifications, we save your phone's push token with
+          your account. They tell you who invited you to a party, that there's a new question in a party (with
+          the party's name), and when your question closes, never a question or an answer. A verified business
+          that turns on push also gets notices about its business party. Turning them off, signing out or deleting
           your account removes the token.
+        </li>
+        <li>
+          <strong>Security check:</strong> on the screens where you sign up, sign in, ask for a new code or reset your
+          password, and when you delete your account with a password, Cloudflare Turnstile checks that you're a person,
+          not a bot. For that check, Cloudflare receives technical details about your device and connection, such as
+          your IP address.
         </li>
       </ul>
       <p>
@@ -204,11 +254,27 @@
           it if you delete your account.
         </li>
         <li>
+          <strong>Parties.</strong> Parties are invitation only (a business party can also be joined with
+          its QR code), and what's in one is seen only by its members. In a party hosted by a person, members see your name,
+          @handle and photo, even if your profile is private, and the questions, comments, photos, videos and voice
+          clips you add. Whoever asks a question picks Public or Anonymous, and it can't be changed after. On a Public
+          question, the person who asked and the host see each vote as it comes in, and everyone in the party sees
+          each vote once it closes. On an Anonymous question, no member, not even the asker or the host, sees who voted or what anyone picked, only the totals. In a business party, every
+          question is Anonymous: the business sees your name and photo in its customer list ("A private member"
+          if your profile is private), never how you answered, and only totals from at least 5 people once a question
+          closes. Customers never see each other. A party's activity shows in the Feeds under the same rules. Meetyr
+          keeps each vote with your account, Anonymous ones too; only Meetyr's team can see who voted how. Nothing in a
+          party counts toward anyone's Meetyr score.
+        </li>
+        <li>
           <strong>That you're visiting a business</strong>, only if you turn on "Let businesses know when I'm there"
           (see above).
         </li>
       </ul>
-      <p>The app never shows anyone how a particular member rated them.</p>
+      <p>
+        The app never shows anyone how a particular member rated them. Votes on a Public party question are different
+        (see Parties above).
+      </p>
 
       <h2>Businesses Meetyr lists from open data</h2>
       <p>
@@ -248,10 +314,14 @@
       <ul>
         <li>To create and run your account, and to sign you in.</li>
         <li>To show nearby profiles, calculate scores and display ratings.</li>
+        <li>To run the parties you join, and to send the notifications you turn on.</li>
         <li>To send account emails, such as confirmation and password reset codes.</li>
         <li>To remind you to rate a business you visited and, if you choose, let it know you're there.</li>
         <li>To count, in totals only, how many members sign up, are active and rate, so we can run and improve Meetyr.</li>
-        <li>To keep Meetyr safe: reviewing reports, enforcing our Terms of Use and preventing abuse or fraud.</li>
+        <li>
+          To keep Meetyr safe: reviewing reports, enforcing our Terms of Use, checking that sign-ups and sign-ins come
+          from people rather than bots, and preventing abuse or fraud.
+        </li>
         <li>To respond when you contact us, and to meet legal obligations.</li>
       </ul>
 
@@ -259,19 +329,28 @@
       <p>We don't sell or rent your personal information. We share it only with:</p>
       <ul>
         <li>
-          <strong>Service providers</strong> that run Meetyr for us under contract: Supabase (database, sign-in and
-          photo storage), Resend (sending account emails, and alerting our team when a report comes in), Cloudflare
-          (counting visits to our website and the web version, without cookies), and Expo (delivering app updates; it
-          receives a random install number, never your name or account, and an error message if an update fails to
-          start; and, if you turn on notifications we send, passing them to Apple to deliver: it receives your phone's
-          push token and each notification's text), and Apple (delivering notifications to your iPhone). They may only
-          use your information to provide their services to us.
+          <strong>Service providers</strong> that run Meetyr for us under contract: Supabase (database, sign-in, and
+          storage for profile photos and for the photos, videos and voice clips you add to questions), Resend (sending
+          account emails, and alerting our team when a report comes in, with a copy of what was reported), Cloudflare
+          (counting visits to our website and the web version, without cookies, and the security check described
+          above), and Expo (delivering app updates; it receives a random install number, never your name or account,
+          and an error message if an update fails to start; and, if you turn on notifications we send, passing them to
+          Apple to deliver: it receives your phone's push token and each notification's text), and Apple (delivering
+          notifications to your iPhone). They may only use your information to provide their services to us.
+        </li>
+        <li>
+          <strong>Apple or Google</strong>, if you sign in with them: they confirm it's you when you sign in, and again
+          when you delete your account, and we ask them to end Meetyr's access when you do. What they do with your
+          Apple or Google account is covered by their own privacy policies.
         </li>
         <li>
           <strong>Address lookup:</strong> when a business enters its address, or you enter your ZIP code, it is looked
           up by Apple's maps service in the iPhone app, or by OpenStreetMap on the web, to find where it is on the map.
         </li>
-        <li><strong>Other members</strong>, limited to the profile information described above.</li>
+        <li>
+          <strong>Other members</strong>, limited to the profile information described above and what you share in
+          parties (see Parties above).
+        </li>
         <li>
           <strong>Authorities</strong>, when required by law, or when needed to protect someone's safety or the
           rights of Meetyr and its members.
@@ -292,6 +371,10 @@
           Me → Visits. Turning visit reminders off erases your visit notes. You can also change Meetyr's location access from
           "Always" to "While using" in your iPhone's Settings.
         </li>
+        <li>
+          <strong>Parties:</strong> leave a party, or remove a question or comment you posted. Leaving takes your
+          questions and comments with you.
+        </li>
         <li><strong>Pause</strong> your account under Me → Safety &amp; reporting → Suspend my account.</li>
         <li>
           <strong>Delete your account</strong> in the app under Me → Safety &amp; reporting → Delete my account (or
@@ -302,14 +385,28 @@
 
       <h2>Keeping and deleting information</h2>
       <p>
-        We keep your information while your account exists. When you delete your account, we delete your profile,
-        photo, location, QR code, visit notes, and the ratings you gave and received. A rating you gave stops counting toward another member's score at the first score update after midnight Pacific time, not at the moment you leave. Until then only the number remains, without your name. Copies may remain in our secure backups for up to 90 days before they're removed. We may keep limited records longer when the law requires it or to
+        We keep your information while your account exists. When you delete your account, it's deleted at once and can't be restored: your profile, photo, location, QR code,
+        visit notes, push tokens, and the ratings you gave and received are removed from Meetyr, and no one can see them. If you signed in
+        with Apple, we also end Meetyr's access to your Apple ID; if you signed in with Google, the app asks Google to
+        end Meetyr's access. In parties, your questions (with their comments), your comments, the photos, videos and voice clips you added, your invitations and the reports you made are deleted, and your votes in parties hosted by a person stay only in totals, linked
+        to no one. A party you host passes to the longest-standing member who can host it, or is deleted if nobody
+        else is in it, and a business party is deleted with the business. A rating you gave stops counting toward another member's score at the first score update after midnight Pacific time, not at the moment you leave. Until then only the number remains, without your name. Copies may remain in our secure backups for up to 90 days before they're removed. We may keep limited records longer when the law requires it or to
         resolve a safety report. Visit notes are deleted after 24 hours.
       </p>
       <p>
-        If you delete your account, we keep any reports made about you, with your name, @handle and the date you
-        deleted it, for 90 days. Only Meetyr's team can see them, so someone can't escape a report by deleting their
-        account. After 90 days they're deleted.
+        In parties, a question keeps its votes, comments and photo, video or voice clip after it closes. It's
+        deleted when its asker or the host removes it, when the asker leaves or is removed from the party, or
+        when the party is deleted. Your comments are also deleted when you leave or are removed from a
+        party. When a question is removed, its photo, video or voice clip is hidden from everyone, but for now we keep
+        the file, as we do for one that never made it onto a question; it's deleted 90 days after its owner deletes their account.
+      </p>
+      <p>
+        We keep a locked copy of your account, and of everything deleted with it, for 90 days after you delete it, so
+        we can look into safety reports, misuse and legal requests. No member can see it. Only Meetyr's team can open
+        it, only for safety or legal reasons, and each time is logged. It doesn't include your password or sign-in
+        tokens. Reports made about you are part of it, with your name, @handle and the date you deleted your account,
+        so someone can't escape a report by deleting their account. After 90 days the copy is permanently deleted,
+        unless the law requires us to keep it longer, for example for a police or court request.
       </p>
       <p>
         If a business that claimed its listing deletes its account, the listing stays on Meetyr with its ratings,
@@ -329,7 +426,9 @@
 
       <h2>Age requirement</h2>
       <p>
-        Meetyr is for people 18 and older. We don't knowingly collect information from anyone younger. If you
+        Meetyr is for people 18 and older. On iPhone, where Apple says the law requires it, Apple asks you to share
+        your age range before you can make an account. The answer stays on your phone: Meetyr uses it only to decide
+        whether you can join, and doesn't keep it. We don't knowingly collect information from anyone younger. If you
         believe someone under 18 has an account, contact us and we'll delete it.
       </p>
 
