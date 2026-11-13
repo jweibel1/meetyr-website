@@ -16,14 +16,15 @@
     />
     <link rel="stylesheet" href="/styles.css" />
     <style>
-      /* The one-time question to phones (below): a card at the bottom of the screen. */
-      .mobile-prompt { position: fixed; z-index: 10; left: max(16px, env(safe-area-inset-left, 0px)); right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); padding: 16px; background: var(--white); border: 1px solid var(--border); border-radius: 16px; box-shadow: 0 8px 30px rgba(31, 30, 40, 0.18); }
+      /* The one-time question to phones (below): the page greys out and the question sits in the upper middle. */
+      .mobile-prompt { position: fixed; inset: 0; z-index: 10; display: flex; justify-content: center; align-items: flex-start; padding: calc(22vh + env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) 16px max(16px, env(safe-area-inset-left, 0px)); background: rgba(31, 30, 40, 0.5); }
       .mobile-prompt[hidden] { display: none; }
-      .mobile-prompt-title { margin: 0 0 12px; font-family: var(--display); font-size: 18px; font-weight: 700; line-height: 1.3; color: var(--ink); }
-      .mobile-prompt-actions { display: flex; gap: 10px; }
-      .mobile-prompt-actions > * { flex: 1; min-height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 12px; font: 700 16px var(--text); cursor: pointer; }
-      .mobile-prompt-no { border: 0; background: var(--tint); color: var(--purple); }
-      .mobile-prompt-yes { background: var(--purple); color: var(--white); }
+      .mobile-prompt-card { width: 100%; max-width: 360px; padding: 22px 18px 18px; background: var(--white); border-radius: 18px; box-shadow: 0 12px 40px rgba(31, 30, 40, 0.3); }
+      .mobile-prompt-title { margin: 0 0 18px; font-family: var(--display); font-size: 21px; font-weight: 700; line-height: 1.3; color: var(--ink); text-align: center; }
+      .mobile-prompt-actions { display: flex; gap: 10px; align-items: center; }
+      .mobile-prompt-yes { flex: 2; min-height: 54px; display: flex; align-items: center; justify-content: center; border-radius: 14px; background: var(--purple); color: var(--white); font: 800 19px var(--text); text-decoration: none; }
+      .mobile-prompt-no { flex: 1; min-height: 44px; border: 0; border-radius: 12px; background: var(--tint); color: var(--purple); font: 600 15px var(--text); cursor: pointer; }
+      body.mobile-prompt-open { overflow: hidden; }
     </style>
     <!-- Cloudflare Web Analytics: counts visits without cookies (see the Privacy Policy). -->
     <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "6abf681c02fc494186cce8af8a3314d2"}'></script>
@@ -129,13 +130,17 @@
       </div>
     </footer>
     <!-- Phones are asked once whether to open the mobile site (owner, 13 Nov 2026: "it should actually prompt to
-         redirect to mobile site", "then if you decline not prompt again"). Only on this home page and only on phones;
-         "No thanks" is remembered on that phone, and ?stay skips the question. -->
-    <div class="mobile-prompt" id="mobile-prompt" role="dialog" aria-labelledby="mobile-prompt-title" hidden>
-      <p class="mobile-prompt-title" id="mobile-prompt-title">Open Meetyr's mobile site?</p>
-      <div class="mobile-prompt-actions">
-        <button type="button" class="mobile-prompt-no" id="mobile-prompt-no">No thanks</button>
-        <a class="mobile-prompt-yes" href="https://app.meetyr.com/">Open</a>
+         redirect to mobile site", "then if you decline not prompt again"; then "this should grey or lighten the
+         background and should say redirect to mobile site? yes or no with yes bigger and on the left, no smaller on the
+         right and should be upper middle of screen"). Only on this home page and only on phones; "No" is remembered on
+         that phone, ?stay skips the question, and ?ask shows it again (for checking it). -->
+    <div class="mobile-prompt" id="mobile-prompt" hidden>
+      <div class="mobile-prompt-card" role="dialog" aria-modal="true" aria-labelledby="mobile-prompt-title">
+        <p class="mobile-prompt-title" id="mobile-prompt-title">Redirect to mobile site?</p>
+        <div class="mobile-prompt-actions">
+          <a class="mobile-prompt-yes" href="https://app.meetyr.com/">Yes</a>
+          <button type="button" class="mobile-prompt-no" id="mobile-prompt-no">No</button>
+        </div>
       </div>
     </div>
     <script>
@@ -145,12 +150,15 @@
         var phone = /iPhone|iPod|Android.+Mobile|Windows Phone/i.test(navigator.userAgent || "");
         var declined = document.cookie.indexOf(KEY + "=no") !== -1;
         try { declined = declined || localStorage.getItem(KEY) === "no"; } catch (e) {}
+        if (/[?&]ask(=|&|$)/.test(location.search)) declined = false;
         if (!box || !phone || declined || location.search.indexOf("stay") !== -1) return;
         box.hidden = false;
+        document.body.classList.add("mobile-prompt-open");
         document.getElementById("mobile-prompt-no").addEventListener("click", function () {
           try { localStorage.setItem(KEY, "no"); } catch (e) {}
           document.cookie = KEY + "=no; max-age=31536000; path=/; SameSite=Lax";
           box.hidden = true;
+          document.body.classList.remove("mobile-prompt-open");
         });
       })();
     </script>
