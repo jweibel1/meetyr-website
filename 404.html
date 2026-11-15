@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page not found — Meetyr</title>
+    <meta name="robots" content="noindex" />
+    <!-- A business's counter code (meetyr.com/c/<code>) opened where Meetyr isn't installed, or on a computer: on to the
+         mobile site, which opens the business's page or asks to join first. Opens in Meetyr itself on an iPhone that has it
+         (the link file in /.well-known). Anything else that isn't a page: "Page not found". -->
+    <script>
+      (function () {
+        var m = location.pathname.match(/^\/c\/([a-z2-9]{8})\/?$/i);
+        if (m) location.replace("https://app.meetyr.com/c/" + m[1].toLowerCase());
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Space+Grotesk:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="wordmark" href="/" aria-label="Meetyr home">meetyr</a>
+        <nav class="site-nav" aria-label="Main">
+          <a href="/support/">Support</a>
+          <a href="/privacy/">Privacy</a>
+          <a href="/terms/">Terms</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap doc">
+      <h1>Page not found</h1>
+      <p><a href="/">Go to meetyr.com</a></p>
+    </main>
+  </body>
+</html>

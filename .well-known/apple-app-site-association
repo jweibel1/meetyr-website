@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["5898JA34YL.com.meetyr.app"],
+        "components": [
+          {
+            "/": "/c/*",
+            "comment": "Only a business's counter code (meetyr.com/c/<code>) opens Meetyr; the rest of meetyr.com opens in the browser."
+          }
+        ]
+      }
+    ]
+  }
+}
