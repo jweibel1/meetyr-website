@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meetyr for Business — Meetyr</title>
+    <meta name="robots" content="noindex" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Space+Grotesk:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 28px; border-radius: 12px; background: var(--purple); color: var(--white); font: 800 16px var(--text); text-decoration: none; }
+    </style>
+  </head>
+  <body>
+    <!-- Where Stripe sends a business back from the app (supabase/functions/business-plan, RETURN_URLS.app): back to Meetyr. -->
+    <header class="site-header">
+      <div class="wrap">
+        <a class="wordmark" href="/" aria-label="Meetyr home">meetyr</a>
+      </div>
+    </header>
+
+    <main class="wrap doc">
+      <h1>Meetyr for Business</h1>
+      <p id="message">You can go back to Meetyr now.</p>
+      <p><a class="button" id="open" href="meetyr://business-plan">Open Meetyr</a></p>
+      <p><a href="https://app.meetyr.com/business-plan">Use Meetyr on the web</a></p>
+    </main>
+
+    <script>
+      (function () {
+        var started = new URLSearchParams(location.search).get("plan") === "started";
+        if (started) {
+          document.getElementById("message").textContent =
+            "Thanks. Your plan shows in Meetyr once Stripe confirms the payment.";
+          document.getElementById("open").href = "meetyr://business-plan?plan=started";
+        }
+        // On a phone, hand straight back to the app.
+        if (/iPhone|iPad|Android/i.test(navigator.userAgent)) {
+          setTimeout(function () {
+            location.href = document.getElementById("open").href;
+          }, 300);
+        }
+      })();
+    </script>
+  </body>
+</html>
