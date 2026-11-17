@@ -128,6 +128,16 @@
           <strong>MeetyrMaid:</strong> what you share there to be rated (a title, and a photo, video or voice clip,
           writing, or both), and the thumbs up or down you give what others share, once each and never your own.
         </li>
+        <li>
+          <strong>Legend drawings:</strong> if you send a photo of your drawing of a Legend, the app first removes its
+          location and other saved details, as it does for question photos, and the photo is checked automatically (see
+          Automatic safety checks). It's then shown among that Legend's drawings with your name, or as "A member" if your
+          profile is private. Members can vote for each drawing once. The page shows how many votes each drawing has,
+          never who voted, though we keep who voted for which drawing. The drawing with the most votes can become the
+          Legend's picture, shown without your name, after Meetyr's team has looked at it. If you delete your account,
+          your drawings and votes are removed, the Legend goes back to its original picture, and the photo file is
+          deleted on the same schedule as a question photo's (see Keeping and deleting information).
+        </li>
         <li><strong>Messages to us:</strong> anything you send to our support address.</li>
         <li><strong>Chats:</strong> the messages you write in dialogues and group chats, the questions you ask there and the answers you give, who they're with and when, and a group chat's topic.</li>
         <li><strong>Profile questions:</strong> the question on your profile, and your answers to others' (the person who asked sees answers without names; Meetyr keeps who wrote each).</li>
@@ -192,6 +202,11 @@
         </li>
         <li>
           When you use the app, we record which version of the app you're using, with what you create (ratings, votes, questions, comments, photos, videos, voice clips and reports), and each time you open the app signed in. We use it to fix problems and to know which rules applied.
+        </li>
+        <li>
+          <strong>Views:</strong> when you open a discussion, tap its link or play its video, we note that you did, to
+          count its views and rank discussions. Members see only the number, never who viewed. We keep who viewed a
+          discussion for 8 days; after that, only the number stays.
         </li>
       </ul>
       <p>
@@ -417,10 +432,10 @@
       <ul>
         <li>
           <strong>Service providers</strong> that run Meetyr for us under contract: Supabase (database, sign-in, and
-          storage for profile photos and for the photos, videos and voice clips you add to questions), Fly.io (running Meetyr's own service that makes the
+          storage for profile photos and for the photos, videos and voice clips you add to questions, and Legend drawings), Fly.io (running Meetyr's own service that makes the
           fingerprints and still pictures for the safety checks above: the whole video passes through it, and it keeps
           nothing), Microsoft (PhotoDNA: it receives only fingerprints, never pictures), OpenAI (the safety checks of
-          question photos, video stills and the sound of voice clips and videos), Resend (sending
+          question photos, Legend drawings, video stills and the sound of voice clips and videos), Resend (sending
           account emails, and alerting our team when a report comes in, with a copy of what was reported), Cloudflare
           (counting visits to our website and the web version, without cookies, and the security check described
           above), and Expo (delivering app updates; it receives a random install number, never your name or account,
